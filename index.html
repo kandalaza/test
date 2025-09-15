@@ -1,0 +1,361 @@
+
+site-footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div class="avatar" aria-hidden="true">А</div>
+      <div>
+        <h1>Бакаев Асхаб</h1>
+        <p class="lead">Лэндинг-профайл — кратко, стильно и с одной викториной, чтобы проверять, как хорошо тебя «типо» знаю.</p>
+        <div class="meta-row" aria-hidden="true">
+          <span class="badge">Люблю код и кофе</span>
+          <span class="badge">Музыка: рок/электро</span>
+          <span class="badge">Город: (уточнить)</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="card about" aria-labelledby="about-title">
+        <h2 id="about-title">Оба-на, кто такой Асхаб?</h2>
+        <p class="bio" id="bio">
+  Бакаев Асхаб — человек с характером, которому не всё равно. 
+  Здесь краткая выдуманная / заготовочная биография, которую можно подредактировать:
+  
+  • Родился в небольшом городе.
+  • Интересы: программирование, музыка, спорт.
+  • Любимая фраза: "Сделай красиво или не делай вовсе".
+  
+  (Замените этот текст на реальные факты про Асхаба.)
+        </p>
+
+        <div class="gallery" aria-label="Галерея">
+          <div class="photo">Фото 1</div>
+          <div class="photo">Фото 2</div>
+          <div class="photo">Фото 3</div>
+          <div class="photo">Фото 4</div>
+        </div>
+
+        <div class="footer">
+          <a class="cta" href="#quiz" role="button">Проверить: Как хорошо ты типо меня знаешь?</a>
+          <div class="muted" style="margin-top:8px">SEO: JSON-LD включён ниже для семантики.</div>
+        </div>
+      </section>
+
+      <div class="grid-2">
+        <section class="card timeline" aria-labelledby="timeline-title">
+          <h2 id="timeline-title">Таймлайн — важные вехи</h2>
+          <div class="timeline-item">
+            <strong>2000</strong>
+            <time>— Родился (примерно)</time>
+            <div class="muted">Начало истории.</div>
+          </div>
+          <div class="timeline-item">
+            <strong>2018</strong>
+            <time>— Погружение в IT</time>
+            <div class="muted">Учёба, проекты, первые коммиты.</div>
+          </div>
+          <div class="timeline-item">
+            <strong>2024</strong>
+            <time>— Поворотный год</time>
+            <div class="muted">Новые вызовы и цели.</div>
+          </div>
+          <p class="muted" style="margin-top:8px">Подправь даты и события под правду — я написал пример.</p>
+        </section>
+
+        <aside class="card" id="quiz" aria-labelledby="quiz-title">
+          <h2 id="quiz-title">Викторина: Как хорошо ты типо меня знаешь?</h2>
+          <p class="muted">Нажми вариант — узнаешь результат прямо тут.</p>
+
+          <div id="quiz-root" class="quiz" role="application" aria-live="polite">
+            <!-- Вопросы будут вставлены JS'ом -->
+            <div id="question-area" aria-hidden="false"></div>
+            <div id="controls" style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+              <button id="prevBtn" class="choice" style="flex:1 1 auto">← Назад</button>
+              <button id="nextBtn" class="choice" style="flex:1 1 auto">Вперед →</button>
+            </div>
+            <div id="result" class="results" hidden></div>
+          </div>
+
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      Сделано автоматически — редактируй содержание. © <span id="year"></span>
+    </footer>
+  </div>
+
+  <!-- Структура данных и логика викторины -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Вопросы — заменяй на реальные факты про Асхаба
+    const quiz = [
+      {
+        q: "Какой любимый напиток Асхаба?",
+        choices: ["Кофе", "Чай", "Кола", "Морс"],
+        a: 0
+      },
+      {
+        q: "Чем Асхаб увлекается в свободное время?",
+        choices: ["Программирование", "Рыбалка", "Садоводство", "Кулинария"],
+        a: 0
+      },
+      {
+        q: "Какая музыка нравится Асхабу?",
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Бакаев Асхаб — Кто он и знаешь ли ты его?</title>
+  <meta name="description" content="Лэндинг про Бакаева Асхаба с биографией, таймлайном и мини-викториной 'Как хорошо ты типо меня знаешь?'" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%233b82f6'/%3E%3Ctext x='50' y='58' font-size='36' text-anchor='middle' fill='white' font-family='Arial'%3EA%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#60a5fa;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      color-scheme: dark;
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071023 0%, #06122a 60%);
+      color: #e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:28px;
+    }
+    .container{
+      max-width:1000px;
+      margin:0 auto;
+    }
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:22px;
+    }
+    .avatar{
+      width:84px;height:84px;border-radius:18px;
+      background:linear-gradient(135deg,var(--accent),#7dd3fc);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:34px;color:#05203a;
+      box-shadow:0 6px 20px rgba(2,6,23,0.6);
+      flex:0 0 84px;
+    }
+    h1{font-size:22px;margin:0}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+    main{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:18px;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: 0 6px 24px rgba(2,6,23,0.5);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 340px;
+      gap:18px;
+    }
+    @media (max-width:880px){
+      .grid-2{grid-template-columns:1fr}
+      .avatar{width:72px;height:72px;font-size:30px}
+    }
+    .meta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;color:var(--muted);font-size:14px}
+    .badge{padding:6px 10px;background:var(--glass);border-radius:999px;font-weight:600}
+    .about h2,.quiz h2,.timeline h2{margin:0 0 10px 0}
+    .bio{white-space:pre-wrap}
+    .timeline-item{padding:10px;border-left:3px solid rgba(255,255,255,0.04);margin:12px 0}
+    .timeline-item time{display:block;color:var(--muted);font-size:13px}
+    /* Quiz */
+    .quiz-choices{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+    button.choice{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);
+      padding:10px;border-radius:10px;color:inherit;text-align:left;
+      cursor:pointer;font-weight:600;
+    }
+    button.choice:hover{transform:translateY(-3px)}
+    .results{padding:14px;border-radius:12px;background:linear-gradient(90deg, rgba(96,165,250,0.08), rgba(125,211,252,0.03));margin-top:12px}
+    .footer{margin-top:14px;color:var(--muted);font-size:13px}
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+      gap:10px;
+      margin-top:10px;
+    }
+    .photo{
+      height:88px;border-radius:10px;background:linear-gradient(135deg,#0b1b2a, #082033);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    /* small utilities */
+    .muted{color:var(--muted);font-size:14px}
+    a.cta{
+      display:inline-block;padding:8px 12px;border-radius:10px;background:var(--accent);color:#05203a;font-weight:700;text-decoration:none;margin-top:6px;
+      box-shadow:0 6px 18px rgba(96,165,250,0.12)
+    }
+    footer.choices: ["Рок/электро", "Классика", "Шансон", "Джаз"],
+        a: 0
+      },
+      {
+        q: "Что Асхаб предпочитает?",
+        choices: ["Ночной кодинг", "Утренние пробежки", "Дневной сон", "Книжные клубы"],
+        a: 0
+      }
+    ];
+
+    // State
+    let idx = 0;
+    const answers = new Array(quiz.length).fill(null);
+
+    const qArea = document.getElementById('question-area');
+    const resultBox = document.getElementById('result');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function renderQuestion(i) {
+      const item = quiz[i];
+      qArea.innerHTML = '';
+      const h = document.createElement('h3');
+      h.textContent = (i+1) + '. ' + item.q;
+      qArea.appendChild(h);
+
+      const choices = document.createElement('div');
+      choices.className = 'quiz-choices';
+      item.choices.forEach((c, ci) => {
+        const btn = document.createElement('button');
+        btn.className = 'choice';
+        btn.setAttribute('data-choice', ci);
+        btn.textContent = c;
+        if (answers[i] === ci) btn.style.outline = '3px solid rgba(96,165,250,0.18)';
+        btn.addEventListener('click', () => {
+          answers[i] = ci;
+          // визуальная подсветка
+          Array.from(choices.children).forEach(n => n.style.outline = 'none');
+          btn.style.outline = '3px solid rgba(96,165,250,0.18)';
+        });
+        choices.appendChild(btn);
+      });
+      qArea.appendChild(choices);
+
+      // подсказка / прогресс
+      const prog = document.createElement('div');
+      prog.className = 'muted';
+      prog.style.marginTop = '8px';
+      prog.textContent = Вопрос ${i+1} из ${quiz.length}. Ответов: ${answers.filter(a=>a!==null).length};
+      qArea.appendChild(prog);
+
+      // скрыть/показать result
+      resultBox.hidden = true;
+    }
+
+    function showResult() {
+      const filled = answers.filter(a=>a!==null).length;
+      if (filled < quiz.length) {
+        resultBox.hidden = false;
+        resultBox.innerHTML = <strong>Заполни все вопросы, чувак.</strong><div class="muted" style="margin-top:6px">Ответов — ${filled} из ${quiz.length}.</div>;
+        return;
+      }
+      let score = 0;
+      answers.forEach((ans,i) => { if (ans === quiz[i].a) score++ });
+      resultBox.hidden = false;
+      let text = '';
+      if (score === quiz.length) text = "Воу — ты прям как инсайдер. Знаешь всё идеально!";
+      else if (score >= Math.ceil(quiz.length*0.75)) text = "Неплохо! Ты явно знаком лучше среднего.";
+      else if (score >= Math.ceil(quiz.length*0.5)) text = "Так средне — есть пробелы.";
+      else text = "Окей, ты явно не в теме. Надо знакомиться заново.";
+
+      resultBox.innerHTML = <strong>Результат: ${score} / ${quiz.length}</strong><div style="margin-top:8px">${text}</div>;
+    }
+
+    // Controls
+    prevBtn.addEventListener('click', () => {
+      if (idx > 0) idx--;
+      renderQuestion(idx);
+    });
+    nextBtn.addEventListener('click', () => {
+      if (idx < quiz.length - 1) {
+        idx++;
+        renderQuestion(idx);
+      } else {
+        showResult();
+      }
+    });
+
+    // Initial
+    renderQuestion(idx);
+
+    // --- Дополнительные удобства для редактирования контента (инлайн) ---
+    // Двойной клик по био — редактируемый текст
+    const bioEl = document.getElementById('bio');
+    bioEl.addEventListener('dblclick', () => {
+      const t = bioEl.textContent;
+      const ta = document.createElement('textarea');
+      ta.value = t.trim();
+      ta.style.width = '100%';
+      ta.style.minHeight = '140px';
+      ta.style.borderRadius = '10px';
+      ta.style.padding = '12px';
+      bioEl.replaceWith(ta);
+      ta.focus();
+      // Сохраняем на Enter+Ctrl / теряем фокус
+      function save() {
+        const newP = document.createElement('p');
+        newP.className = 'bio';
+        newP.id = 'bio';
+        newP.textContent = ta.value || '— пусто —';
+        ta.replaceWith(newP);
+      }
+      ta.addEventListener('blur', save, {once:true});
+      ta.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+          ta.blur();
+        }
+      });
+    });
+
+    // Для удобства: клавиши ← и → переключают вопросы
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prevBtn.click();
+      if (e.key === 'ArrowRight') nextBtn.click();
+      if (e.key === 'Enter' && document.activeElement.tagName !== 'TEXTAREA') {
+        // если все ответы даны — показываем результат
+        const filled = answers.filter(a=>a!==null).length;
+        if (filled === quiz.length) showResult();
+      }
+    });
+
+    // Семантика: добавим JSON-LD (пример — поменяй данные)
+    (function addJsonLd(){
+      const person = {
+        "@context":"https://schema.org",
+        "@type":"Person",
+        "name":"Бакаев Асхаб",
+        "jobTitle":"IT-энтузиаст",
+        "description":"Профиль-лендинг для Асхаба — место для биографии, галереи и викторины.",
+        "knowsAbout":["программирование","музыка","спорт"]
+      };
+      const s = document.createElement('script');
+      s.type = 'application/ld+json';
+      s.text = JSON.stringify(person);
+      document.head.appendChild(s);
+    })();
+  </script>
+</body>
+</html>
